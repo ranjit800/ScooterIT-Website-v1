@@ -8,7 +8,7 @@ import heroBg from "@/public/Images/hero-bg.png";
 
 const HeroSection = () => {
   return (
-    <section className="relative md:min-h-screen flex items-center overflow-hidden mt-24">
+    <section className="relative md:min-h-[calc(100vh-12vh)] flex items-center overflow-hidden mt-[12vh]">
       {/* Background Image with Tint Overlay */}
       <div className="absolute inset-0 z-0">
         <Image src={heroBg} alt="Scooters in the park" fill sizes="100vw" className="" priority />
@@ -21,7 +21,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="bg-white rounded-4xl p-6 md:p-9 max-w-lg shadow-2xl font-jakarta"
+          className="bg-white rounded-4xl p-6 md:p-10 md:py-12 max-w-lg shadow-2xl font-jakarta"
         >
           {/* Main Content */}
           <div className="md:space-y-4 space-y-5">

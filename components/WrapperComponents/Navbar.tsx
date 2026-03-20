@@ -48,7 +48,7 @@ const Navbar = () => {
   return (
     <>
       <nav className={`fixed top-0 left-0 right-0 z-120 transition-all duration-300 font-jakarta ${isOpen ? '' : 'bg-[#151515] border-b border-white/5'}`}>
-        <div className="container mx-auto px-6 md:px-0 h-24 flex items-center justify-between">
+        <div className="container mx-auto px-6 md:px-0 h-[12vh] flex items-center justify-between">
           {/* Logo and Brand */}
           <Link href="/" className="flex items-center gap-3 group">
             <Image 
