@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { motion, AnimatePresence, Variants } from 'framer-motion'
 import { LogIn } from 'lucide-react'
-import logoGif from '@/public/Images/Logogif.gif'
+import logo from '@/public/Images/logo.png'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -51,29 +51,25 @@ const Navbar = () => {
         <div className="container mx-auto px-6 md:px-0 h-24 flex items-center justify-between">
           {/* Logo and Brand */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="bg-[#c0ff72] p-2 rounded-xl flex items-center justify-center transition-transform group-hover:scale-105">
-              <Image 
-                src={logoGif} 
-                alt="ScooterIT Logo" 
-                width={32}
-                height={32}
-                className="object-contain"
-              />
-            </div>
-            <h1 className='text-[16px] text-white font-medium tracking-tight'>
-              Scooter<span className='font-bold'>IT</span>
-            </h1>
+            <Image 
+              src={logo} 
+              alt="ScooterIT Logo" 
+              width={150}
+              height={150}
+              className="object-cover"
+            />
+           
           </Link>
 
           {/* Desktop Navigation & Actions */}
-          <div className="hidden md:flex items-center gap-10">
+          <div className="hidden md:flex items-center gap-16">
             {/* Navigation Links */}
-            <div className="flex items-center gap-10">
+            <div className="flex items-center gap-16">
               {navLinks.map((link) => (
                 <Link 
                   key={link.name}
                   href={link.href} 
-                  className="text-white/80 font-medium text-[15px] hover:text-[#c0ff72] transition-colors relative group"
+                  className="text-white font-medium text-[18px] hover:text-[#c0ff72] transition-colors relative group"
                 >
                   {link.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#c0ff72] transition-all group-hover:w-full"></span>
@@ -87,7 +83,7 @@ const Navbar = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="text-[15px]">Login</span>
+              <span className="text-[18px]">Login</span>
               <LogIn size={20} className="group-hover:translate-x-1 transition-transform" strokeWidth={2.5} />
             </motion.button>
           </div>

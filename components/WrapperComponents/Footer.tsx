@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { motion, Variants } from 'framer-motion'
 import { Phone, Mail, Smartphone, Crown, Instagram, Facebook, Linkedin, Twitter } from 'lucide-react'
-import logoGif from '@/public/Images/Logogif.gif'
+import logo from '@/public/Images/logo.png'
 
 // Asset imports can be removed if they are no longer used
 
@@ -48,18 +48,14 @@ const Footer = () => {
             variants={fadeUpVariants}
           >
             <Link href="/" className="flex items-center gap-3 mb-8 group w-fit">
-              <div className="bg-[#c0ff72] p-2 rounded-xl flex items-center justify-center transition-transform group-hover:scale-105">
-                <Image 
-                  src={logoGif} 
-                  alt="ScooterIT Logo" 
-                  width={32}
-                  height={32}
-                  className="object-contain"
-                />
-              </div>
-              <h1 className='text-[16px] text-white font-medium tracking-tight'>
-                Scooter<span className='font-bold'>IT</span>
-              </h1>
+              <Image 
+                src={logo} 
+                alt="ScooterIT Logo" 
+                width={150}
+                height={150}
+                className="object-cover"
+              />
+             
             </Link>
 
             <p className="text-white/60 text-[18px] font-medium mb-10 leading-[24px] tracking-[1px] max-w-sm">
