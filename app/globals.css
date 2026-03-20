@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --font-jakarta: var(--font-plus-jakarta-sans);
+}
+
+/* Optional: Section container limit */
+.container {
+  /* max-width: 1200px; */
+  max-width: 1400px;
+}
