@@ -53,6 +53,7 @@ const LoginModal = ({ isOpen, onClose }: LoginModalProps) => {
                     width={80}
                     height={80}
                     className="object-contain"
+                    style={{ height: 'auto' }}
                   />
                 </div>
 

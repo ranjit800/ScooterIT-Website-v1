@@ -57,8 +57,11 @@ const Navbar = () => {
               src={logo} 
               alt="ScooterIT Logo" 
               width={160}
-              height={45}
+              height={52}
+              quality={100}
+              priority
               className="object-contain transition-transform group-hover:scale-105"
+              style={{ height: 'auto' }}
             />
           </Link>
 
