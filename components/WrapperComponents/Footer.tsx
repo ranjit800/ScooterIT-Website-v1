@@ -47,15 +47,14 @@ const Footer = () => {
             className="lg:col-span-2 flex flex-col"
             variants={fadeUpVariants}
           >
-            <Link href="/" className="flex items-center gap-3 mb-8 group w-fit">
+            <Link href="/" className="flex items-center group mb-8 w-fit">
               <Image 
                 src={logo} 
                 alt="ScooterIT Logo" 
-                width={150}
-                height={150}
-                className="object-cover"
+                width={160}
+                height={45}
+                className="object-contain transition-transform group-hover:scale-105"
               />
-             
             </Link>
 
             <p className="text-white/60 text-[18px] font-medium mb-10 leading-[24px] tracking-[1px] max-w-sm">
@@ -142,7 +141,7 @@ const Footer = () => {
 
         {/* Divider */}
         <motion.div 
-          className="w-full h-[1px] bg-white/10 mb-10"
+          className="w-full h-px bg-white/10 mb-10"
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           viewport={{ once: false }}

@@ -5,9 +5,11 @@ import Link from 'next/link'
 import { motion, AnimatePresence, Variants } from 'framer-motion'
 import { LogIn } from 'lucide-react'
 import logo from '@/public/Images/logo.png'
+import LoginModal from './LoginModal'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
 
   const menuVariants: Variants = {
     closed: {
@@ -50,15 +52,14 @@ const Navbar = () => {
       <nav className={`fixed top-0 left-0 right-0 z-120 transition-all duration-300 font-jakarta ${isOpen ? '' : 'bg-[#151515] border-b border-white/5'}`}>
         <div className="container mx-auto px-6 md:px-0 h-[12vh] flex items-center justify-between">
           {/* Logo and Brand */}
-          <Link href="/" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center group">
             <Image 
               src={logo} 
               alt="ScooterIT Logo" 
-              width={150}
-              height={150}
-              className="object-cover"
+              width={160}
+              height={45}
+              className="object-contain transition-transform group-hover:scale-105"
             />
-           
           </Link>
 
           {/* Desktop Navigation & Actions */}
@@ -82,6 +83,7 @@ const Navbar = () => {
               className="bg-[#c0ff72] text-black px-8 py-3 rounded-full font-semibold flex items-center gap-2 hover:bg-[#b0f55d] transition-all shadow-[0_0_20px_rgba(192,255,114,0.3)] group"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => setIsLoginOpen(true)}
             >
               <span className="text-[18px]">Login</span>
               <LogIn size={20} className="group-hover:translate-x-1 transition-transform" strokeWidth={2.5} />
@@ -125,7 +127,10 @@ const Navbar = () => {
               ))}
               
               <motion.div variants={itemVariants} className="w-full max-w-xs pt-6">
-                <button className="bg-[#c0ff72] w-full text-black px-8 py-4 rounded-full text-lg font-semibold flex items-center justify-center gap-3 hover:bg-[#b0f55d] transition-all shadow-[0_0_30px_rgba(192,255,114,0.2)] group">
+                <button 
+                  onClick={() => { setIsLoginOpen(true); setIsOpen(false); }}
+                  className="bg-[#c0ff72] w-full text-black px-8 py-4 rounded-full text-lg font-semibold flex items-center justify-center gap-3 hover:bg-[#b0f55d] transition-all shadow-[0_0_30px_rgba(192,255,114,0.2)] group"
+                >
                   <span>Login</span>
                   <LogIn size={24} strokeWidth={2.5} />
                 </button>
@@ -134,6 +139,10 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
+      <LoginModal 
+        isOpen={isLoginOpen} 
+        onClose={() => setIsLoginOpen(false)} 
+      />
     </>
   )
 }
